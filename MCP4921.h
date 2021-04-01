@@ -63,7 +63,7 @@ class MCP4921 {
   public:
     static const uint16_t MIN_DAC_VALUE = 0;
     static const uint16_t MAX_DAC_VALUE = 4095;
-    static const uint32_t MAX_SPI_SPEED = 2e7;
+    static const uint32_t MAX_SPI_SPEED = 1e7;
     static const uint32_t REGISTER_BYTE_SIZE = 2;
     MCP4921(uint16_t val = MCP4921::MIN_DAC_VALUE,
             bool channel_b = false,
@@ -71,7 +71,7 @@ class MCP4921 {
             bool gain2x = false,
             bool active_output = true,
             uint8_t spi_mode = SPI_MODE_0,
-            uint32_t spi_hz = MCP4921::MAX_SPI_SPEED, // Setted to 1MHz, make sure both of your slave/master can support it.
+            uint32_t spi_hz = MCP4921::MAX_SPI_SPEED, // Setted to 10MHz, make sure both of your slave/master can support it.
             uint32_t spi_bits_per_word = 8,
             uint16_t spi_delay = 0
           );
