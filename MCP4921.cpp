@@ -48,7 +48,9 @@ MCP4921::MCP4921(uint16_t val,
 
   this->spi_speed = spi_hz;
 
-  this->value = val;
+  if(val > MCP4921::MAX_DAC_VALUE) {
+    this->value = MCP4921::MAX_DAC_VALUE;
+  }
 
   this->dac_select = channel_b ? DAC_SELECT_B : DAC_SELECT_B;
   this->output_buffered = buffered_output ? BUFFERED_OUTPUT : UNBUFFERED_OUTPUT;
